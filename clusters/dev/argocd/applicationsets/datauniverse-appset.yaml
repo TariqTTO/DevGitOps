@@ -19,7 +19,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: git@github.com:TariqTTO/DevGitOps.git
+        repoURL: git@github.com/TariqTTO/DevGitOps.git
         #!# targetRevision: HEAD
         targetRevision: init-tto/gitops
         path: 'apps/{{env}}'
