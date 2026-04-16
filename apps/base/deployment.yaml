@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: globomantics-app
+  name: datauniverse-app
   labels:
-    app: globomantics-app
+    app: datauniverse-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: globomantics-app
+      app: datauniverse-app
   template:
     metadata:
       labels:
-        app: globomantics-app
+        app: datauniverse-app
     spec:
       containers:
       - name: app

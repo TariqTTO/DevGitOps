@@ -13,24 +13,24 @@ provider "kubernetes" {
 }
 
 # Create staging namespace
-resource "kubernetes_namespace" "globomantics_staging" {
+resource "kubernetes_namespace" "datauniverse_staging" {
   metadata {
-    name = "globomantics-staging"
+    name = "datauniverse-staging"
     labels = {
       environment = "staging"
       managed-by  = "terraform"
-      app         = "globomantics"
+      app         = "datauniverse"
     }
   }
 }
 
 # Create Deployment
-resource "kubernetes_deployment" "globomantics_app" {
+resource "kubernetes_deployment" "datauniverse_app" {
   metadata {
-    name      = "globomantics-app"
-    namespace = kubernetes_namespace.globomantics_staging.metadata[0].name
+    name      = "datauniverse-app"
+    namespace = kubernetes_namespace.datauniverse_staging.metadata[0].name
     labels = {
-      app = "globomantics-app"
+      app = "datauniverse-app"
     }
   }
 
@@ -39,20 +39,20 @@ resource "kubernetes_deployment" "globomantics_app" {
 
     selector {
       match_labels = {
-        app = "globomantics-app"
+        app = "datauniverse-app"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "globomantics-app"
+          app = "datauniverse-app"
         }
       }
 
       spec {
         container {
-          name  = "globomantics-app"
+          name  = "datauniverse-app"
           image = var.app_image
           
           port {
@@ -76,15 +76,15 @@ resource "kubernetes_deployment" "globomantics_app" {
 }
 
 # Create Service
-resource "kubernetes_service" "globomantics_service" {
+resource "kubernetes_service" "datauniverse_service" {
   metadata {
-    name      = "globomantics-service"
-    namespace = kubernetes_namespace.globomantics_staging.metadata[0].name
+    name      = "datauniverse-service"
+    namespace = kubernetes_namespace.datauniverse_staging.metadata[0].name
   }
 
   spec {
     selector = {
-      app = "globomantics-app"
+      app = "datauniverse-app"
     }
 
     port {

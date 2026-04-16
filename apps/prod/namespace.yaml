@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: globomantics-prod
+  name: datauniverse-prod
   labels:
     managed-by: gitops
     environment: base

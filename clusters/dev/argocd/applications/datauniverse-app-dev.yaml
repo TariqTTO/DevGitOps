@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datauniverse-app-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:TariqTTO/DevGitOps.git
+    #!# targetRevision: HEAD
+    targetRevision: init-tto/gitops
+    path: apps/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datauniverse-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: default-deny-all
-  namespace: globomantics
+  namespace: datauniverse
 spec:
   podSelector: {}
   policyTypes:
@@ -13,11 +13,11 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-internal-communication
-  namespace: globomantics
+  namespace: datauniverse
 spec:
   podSelector:
     matchLabels:
-      app: globomantics-app
+      app: datauniverse-app
   policyTypes:
   - Ingress
   - Egress
@@ -25,7 +25,7 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          name: globomantics
+          name: datauniverse
     ports:
     - protocol: TCP
       port: 8080
@@ -33,7 +33,7 @@ spec:
   - to:
     - namespaceSelector:
         matchLabels:
-          name: globomantics
+          name: datauniverse
     ports:
     - protocol: TCP
       port: 6379  # Redis

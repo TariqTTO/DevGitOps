@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: globomantics-prod
+  name: datauniverse-prod
   labels:
     environment: production
     tier: critical

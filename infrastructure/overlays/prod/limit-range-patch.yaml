@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: globomantics-limits
-  namespace: globomantics-prod
+  name: datauniverse-limits
+  namespace: datauniverse-prod
 spec:
   limits:
   - default:

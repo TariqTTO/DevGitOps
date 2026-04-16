@@ -1,4 +1,4 @@
-# Globomantics GitOps Repository Structure
+# datauniverse GitOps Repository Structure
 
 This repository demonstrates a comprehensive GitOps implementation for Kubernetes applications using multiple tools and environments.
 

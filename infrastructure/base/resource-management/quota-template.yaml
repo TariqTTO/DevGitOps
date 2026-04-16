@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: globomantics-quota
-  namespace: globomantics
+  name: datauniverse-quota
+  namespace: datauniverse
 spec:
   hard:
     requests.cpu: "2"
@@ -16,8 +16,8 @@ spec:
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: globomantics-limits
-  namespace: globomantics
+  name: datauniverse-limits
+  namespace: datauniverse
 spec:
   limits:
   - default:

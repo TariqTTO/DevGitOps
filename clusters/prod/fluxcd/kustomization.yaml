@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: globomantics-apps
+  name: datauniverse-apps
   namespace: flux-system
 spec:
   interval: 10m
@@ -9,4 +9,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: globomantics-gitops
+    name: datauniverse-gitops

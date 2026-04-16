@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: globomantics-dev
+  name: datauniverse-dev
   labels:
     environment: development
     tier: development

@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: globomantics-quota
-  namespace: globomantics-dev
+  name: datauniverse-quota
+  namespace: datauniverse-dev
 spec:
   hard:
     requests.cpu: "1"

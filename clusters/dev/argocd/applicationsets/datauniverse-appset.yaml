@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: globomantics-appset
+  name: datauniverse-appset
   namespace: argocd
 spec:
   generators:
@@ -15,7 +15,7 @@ spec:
         cluster: https://kubernetes.default.svc
   template:
     metadata:
-      name: 'globomantics-app-{{env}}'
+      name: 'datauniverse-app-{{env}}'
     spec:
       project: default
       source:
@@ -24,7 +24,7 @@ spec:
         path: 'apps/{{env}}'
       destination:
         server: '{{cluster}}'
-        namespace: 'globomantics-{{env}}'
+        namespace: 'datauniverse-{{env}}'
       syncPolicy:
         automated:
           prune: true
