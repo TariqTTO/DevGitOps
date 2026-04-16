@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/CodeWithPraveen/ps-implementing-gitops
+  url: ssh://git@github.com:TariqTTO/DevGitOps.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
