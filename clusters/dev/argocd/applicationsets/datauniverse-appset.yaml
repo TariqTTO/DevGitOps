@@ -19,8 +19,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/CodeWithPraveen/ps-implementing-gitops.git
-        targetRevision: HEAD
+        repoURL: git@github.com:TariqTTO/DevGitOps.git
+        #!# targetRevision: HEAD
+        targetRevision: init-tto/gitops
         path: 'apps/{{env}}'
       destination:
         server: '{{cluster}}'
